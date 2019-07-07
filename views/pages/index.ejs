@@ -20,7 +20,7 @@
         var searchString = document.getElementById("zip").value;
         document.getElementById("display").innerHTML = "NEXT";
         //problem here 
-        var URL = "api.openweathermap.org/data/2.5/weather?zip=" + searchstring + "&appid=d380e2a8215f99dffadfe81ffcbd602b";
+        var URL = "api.openweathermap.org/data/2.5/weather?zip=" + "83340" + "&appid=d380e2a8215f99dffadfe81ffcbd602b";
         document.getElementById("display").innerHTML = "Made it"; 
         //call fetch with our url...remember that fetch returns a Promise
         //that must be processed with a call to the .then() method.
