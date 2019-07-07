@@ -28,7 +28,6 @@
           .then(function(response) {
             // fetch also returns a stream as the result...we have to tell it
             // how to format the stream...our choices are: json, text, or blob (binary data)
-            document.getElementById("display").innerHTML = "Fetch"; 
             return response.json();
             // the json() method also returns a promise...so we need
             //to call .then() on it as well (shown on the next line)
@@ -40,7 +39,6 @@
       }
 
       function updateResultList(data) {
-        console.log('Retrieved JSON');
         document.getElementById("display").innerHTML = "Retrieved JSON";
       }
     </script>
