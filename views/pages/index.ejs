@@ -22,6 +22,7 @@
         function runAJAX() {
           document.getElementById("display").innerHTML = "Start";
           var userZip = document.getElementById("zip").value;
+          storeUser();
           AJAX(userZip);
         }
   
@@ -36,7 +37,7 @@
                     var str = this.response;
           // store to local storage
                     localStorage.setItem("userWeather", str);
-                      displayWeather();
+                    displayWeather();
                     //  console.log("weather is up to date")
                 }
               };
@@ -46,15 +47,15 @@
         }
   
         function displayWeather() {
+          document.getElementById("temp").innerHTML = "Start Display";
           // access locally storage
           var str = localStorage.getItem("userWeather");
           // PARSE
           var weather = JSON.parse(str);
           // Present Data   
           var JSONtemp = k2f(weather.main.temp);
-          var div = document.getElementById("temp");
-          div.innerHTML += JSONtemp;
-  
+          document.getElementById("temp").innerHTML = "Test";
+  /*
           var highTemp = k2f(weather.main.temp_max);
           var div = document.getElementById("high");
           div.innerHTML += highTemp;
@@ -69,6 +70,7 @@
           //Greet user
           var name = localStorage.getItem("user");
           document.getElementById("greet").innerHTML += "Welcome, " + name + ". Here is the weather in " + weather.name + ".";
+  */
         }
   
         function k2f(kelvin) {
@@ -77,7 +79,6 @@
         }
   
         function storeUser() {
-          localStorage.setItem("user", document.getElementById("name").value);
           localStorage.setItem("userZip", document.getElementById("zip").value);
         }
   
