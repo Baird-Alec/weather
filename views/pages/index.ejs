@@ -41,7 +41,7 @@
                   displayWeather();
                   //  console.log("weather is up to date")
                 }
-                document.getElementById("display").innerHTML = this.status;
+                document.getElementById("display").innerHTML = this.statusText;
               };
               xhttp.open("GET", str, true);
               xhttp.send();
