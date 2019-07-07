@@ -18,17 +18,10 @@
       function setWeather() {
         storeUser();
 
-        setTimeout(function () {
-        // get form data   
-            var userZip = document.getElementById("zip").value;
-            AJAX(userZip);
-            
-        }, 950);
-
         function runAJAX() {
           document.getElementById("display").innerHTML = "Start";
           var userZip = document.getElementById("zip").value;
-          AJAX(userZip);
+          //AJAX(userZip);
         }
       }
 
@@ -78,7 +71,7 @@
         var name = localStorage.getItem("user");
         document.getElementById("greet").innerHTML += "Welcome, " + name + ". Here is the weather in " + weather.name + ".";
       }
-*/
+
       function k2f(kelvin) {
         var f = Math.round((kelvin - 273.15) * 9/5 + 32) + "&#8457";
         return f;
@@ -93,6 +86,7 @@
         localStorage.clear();
         location.reload(true);
       }
+*/
     </script>
 </html>
 
