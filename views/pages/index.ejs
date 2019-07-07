@@ -10,7 +10,7 @@
     <body>
             <label for="zip">Enter zip code: </label>
             <input id="zip" type="text" name="zip_code" value="83440">
-            <input type="button" onclick="search()">
+            <input type="button" onclick="search()" value= "Submit">
             <p id="display"></p>
     </body>
     <script>
@@ -38,7 +38,7 @@
 
       function updateResultList(data) {
         console.log('Retrieved JSON');
-        document.getElementById("display").innerHTML = data;
+        document.getElementById("display").innerHTML = "Retrieved JSON";
       }
     </script>
 </html>
