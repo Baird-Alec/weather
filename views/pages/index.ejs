@@ -10,19 +10,13 @@
     <body>
             <label for="zip">Enter zip code: </label>
             <input id="zip" type="text" value="83440">
-            <input type="button" onclick="search()" value= "Submit">
+            <input type="button" onclick="setTimeout()" value= "Submit">
             <p id="display"></p>
     </body>
     <script>
       
-      if(localStorage.getItem("userZip") == null) {
-      console.log("null zip");
-      var inputBox = document.getElementById("inputBox");
-      inputBox.style.visibility = "visible";
-      }
-      else {
         AJAX(localStorage.getItem("userZip"));
-      }
+      
 
       function setWeather() {
         storeUser();
