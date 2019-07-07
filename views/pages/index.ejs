@@ -8,14 +8,37 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <form action="api.openweathermap.org/data/2.5/weather?zip=" method="GET">
             <label for="zip">Enter zip code: </label>
             <input id="zip" type="text" name="zip_code" value="83440">
-            <input type="submit" value="Submit">
-        </form>
+            <input type="button" onclick="search()">
+            <p id="display"></p>
     </body>
     <script>
-        const KEY = "d380e2a8215f99dffadfe81ffcbd602b";
+        const KEY = "&appid=d380e2a8215f99dffadfe81ffcbd602b";
         const URL = "api.openweathermap.org/data/2.5/weather?zip=";
+        function search() {
+        // Get the value from the search box
+        var searchString = document.getElementById('zip').value;
+        var completeurl = URL + searchstring + KEY; 
+        //call fetch with our url...remember that fetch returns a Promise
+        //that must be processed with a call to the .then() method.
+        fetch(completeurl)
+          .then(function(response) {
+            // fetch also returns a stream as the result...we have to tell it
+            // how to format the stream...our choices are: json, text, or blob (binary data)
+            return response.json();
+            // the json() method also returns a promise...so we need
+            //to call .then() on it as well (shown on the next line)
+          })
+          .then(function(data) {
+            // we now have our data and can use it to update our page.
+            updateResultList(data);
+          });
+      }
+
+      function updateResultList(data) {
+        console.log('Retrieved JSON');
+        document.getElementById("display").innerHTML = data;
+      }
     </script>
 </html>
