@@ -42,14 +42,13 @@
         // STRINGIFY
                   var str = this.response;
         // store to local storage
-                  localStorage.setItem("userWeather", str);
-                    displayWeather();
-                    console.log("weather is up to date")
+                  //localStorage.setItem("userWeather", str);
+                  //  displayWeather();
+                  //  console.log("weather is up to date")
               }
             };
             xhttp.open("GET", str, true);
             xhttp.send();
-            document.getElementById("Display").innerHTML = "AJAX";
       }
 
 /*      function displayWeather() {
