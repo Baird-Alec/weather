@@ -14,18 +14,17 @@
             <p id="display"></p>
     </body>
     <script>
-        var KEY = "&appid=d380e2a8215f99dffadfe81ffcbd602b";
-        var URL = "api.openweathermap.org/data/2.5/weather?zip=";
         function search() {
           document.getElementById("display").innerHTML = "HERE"; 
         // Get the value from the search box
         var searchString = document.getElementById("zip").value;
-        document.getElementById("display").innerHTML = "NEXT"; 
-        var completeurl = URL + searchstring + KEY;
+        document.getElementById("display").innerHTML = "NEXT";
+        //problem here 
+        var URL = "api.openweathermap.org/data/2.5/weather?zip=" + searchstring + "&appid=d380e2a8215f99dffadfe81ffcbd602b";
         document.getElementById("display").innerHTML = "Made it"; 
         //call fetch with our url...remember that fetch returns a Promise
         //that must be processed with a call to the .then() method.
-        fetch(completeurl)
+        fetch(URL)
           .then(function(response) {
             // fetch also returns a stream as the result...we have to tell it
             // how to format the stream...our choices are: json, text, or blob (binary data)
