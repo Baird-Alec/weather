@@ -12,6 +12,7 @@
       <input type="text" id="zip">
       <button onclick="runAJAX()">Search</button>
       <p id="display">Haven't Started</p>
+      <p id="temp"></p>
       <script>
       
         function setWeather() {
@@ -45,8 +46,6 @@
         }
   
         function displayWeather() {
-          var cardCase = document.getElementById("cardCase");
-          cardCase.style.visibility = "visible";
           // access locally storage
           var str = localStorage.getItem("userWeather");
           // PARSE
