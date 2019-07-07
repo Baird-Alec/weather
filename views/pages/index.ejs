@@ -33,17 +33,17 @@
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-          // STRINGIFY
-                    var str = this.response;
-          // store to local storage
-                    localStorage.setItem("userWeather", str);
-                    displayWeather();
-                    //  console.log("weather is up to date")
+                  // STRINGIFY
+                  document.getElementById("display").innerHTML = "Finish AJAX";
+                  var str = this.response;
+                  // store to local storage
+                  localStorage.setItem("userWeather", str);
+                  displayWeather();
+                  //  console.log("weather is up to date")
                 }
               };
               xhttp.open("GET", str, true);
               xhttp.send();
-              document.getElementById("display").innerHTML = "Finish AJAX";
         }
   
         function displayWeather() {
