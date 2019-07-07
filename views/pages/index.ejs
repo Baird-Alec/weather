@@ -20,6 +20,7 @@
           document.getElementById("display").innerHTML = "HERE"; 
         // Get the value from the search box
         var searchString = document.getElementById('zip').value;
+        document.getElementById("display").innerHTML = "NEXT"; 
         var completeurl = URL + searchstring + KEY;
         document.getElementById("display").innerHTML = "Made it"; 
         //call fetch with our url...remember that fetch returns a Promise
