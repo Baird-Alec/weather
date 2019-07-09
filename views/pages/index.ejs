@@ -27,7 +27,7 @@
         }
   
         function AJAX(zip) {
-          var str = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&APPID=d380e2a8215f99dffadfe81ffcbd602b";
+          var URL = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&APPID=d380e2a8215f99dffadfe81ffcbd602b";
               
           // AJAX call to API  
               var xhttp = new XMLHttpRequest();
@@ -41,10 +41,8 @@
                   displayWeather();
                   //  console.log("weather is up to date")
                 }
-                document.getElementById("display").innerHTML = this.status;
-                document.getElementById("temp").innerHTML = this.statusText;
               };
-              xhttp.open("GET", str, true);
+              xhttp.open("GET", URL, true);
               xhttp.send();
         }
   
