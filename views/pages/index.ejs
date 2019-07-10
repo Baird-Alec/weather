@@ -49,9 +49,9 @@
         function displayWeather() {
           document.getElementById("temp").innerHTML = "Start Display";
           // access locally storage
-          var str = localStorage.getItem("userWeather");
+          var JSONitem = localStorage.getItem("userWeather");
           // PARSE
-          var weather = JSON.parse(str);
+          var weather = JSON.parse(JSONitem);
           // Present Data   
           var JSONtemp = k2f(weather.main.temp);
           document.getElementById("temp").innerHTML = JSONtemp;
