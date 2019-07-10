@@ -11,7 +11,6 @@
       Zip Code:
       <input type="text" id="zip">
       <button onclick="runAJAX()">Search</button>
-      <p id="display">Haven't Started</p>
       <p id="temp"></p>
       <script>
       
@@ -20,61 +19,48 @@
         }
   
         function runAJAX() {
-          document.getElementById("display").innerHTML = "Start";
-          var userZip = document.getElementById("zip").value;
+          var zip = document.getElementById("zip").value;
           storeUser();
-          AJAX(userZip);
+          AJAX(zip);
         }
   
         function AJAX(zip) {
           var URL = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&APPID=d380e2a8215f99dffadfe81ffcbd602b";
               
-          // AJAX call to API  
+              // AJAX
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                  // STRINGIFY
-                  document.getElementById("display").innerHTML = "Finish AJAX";
                   var str = this.response;
-                  // store to local storage
                   localStorage.setItem("userWeather", str);
-                  displayWeather();
-                  //  console.log("weather is up to date")
+                  display();
                 }
               };
               xhttp.open("GET", URL, true);
               xhttp.send();
         }
   
-        function displayWeather() {
-          document.getElementById("temp").innerHTML = "Start Display";
-          // access locally storage
+        function display() {
           var JSONitem = localStorage.getItem("userWeather");
-          // PARSE
-          var weather = JSON.parse(JSONitem);
-          // Present Data   
-          var JSONtemp = k2f(weather.main.temp);
-          document.getElementById("temp").innerHTML = JSONtemp;
-  /*
-          var highTemp = k2f(weather.main.temp_max);
-          var div = document.getElementById("high");
+          var weather = JSON.parse(JSONitem);  
+          //current
+          var temp = convert(weather.main.temp);
+          document.getElementById("temp").innerHTML = temp;
+          //high
+          var high = convert(weather.main.temp_max);
+          var div = document.getElementById("high").innerHTML = high;
           div.innerHTML += highTemp;
-  
-          var LowTemp = k2f(weather.main.temp_min);
-          var div = document.getElementById("low");
-          div.innerHTML += LowTemp;
-  
-          var humidity = weather.main.humidity + "&#37;";
-          var div = document.getElementById("humidity");
-          div.innerHTML += humidity;
-          //Greet user
-          var name = localStorage.getItem("user");
-          document.getElementById("greet").innerHTML += "Welcome, " + name + ". Here is the weather in " + weather.name + ".";
-  */
+          //low
+          var low = convert(weather.main.temp_min);
+          var div = document.getElementById("low").innerHTML = low;
+ 
+          //humid
+          var humid = weather.main.humidity + "&#37;";
+          var div = document.getElementById("humid").innerHTML = humid;
         }
   
-        function k2f(kelvin) {
-          var f = Math.round((kelvin - 273.15) * 9/5 + 32) + "&#8457";
+        function convert(k) {
+          var f = Math.round((k - 273.15) * 9/5 + 32) + "&#8457";
           return f;
         }
   
