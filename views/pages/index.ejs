@@ -53,15 +53,14 @@
           document.getElementById("temp").innerHTML = temp;
           //high
           var high = convert(weather.main.temp_max);
-          var div = document.getElementById("high").innerHTML = high;
-          div.innerHTML += highTemp;
+          document.getElementById("high").innerHTML = high;
           //low
           var low = convert(weather.main.temp_min);
-          var div = document.getElementById("low").innerHTML = low;
+          document.getElementById("low").innerHTML = low;
  
           //humid
           var humid = weather.main.humidity + "&#37;";
-          var div = document.getElementById("humid").innerHTML = humid; 
+          document.getElementById("humid").innerHTML = humid; 
         }
   
         function convert(k) {
