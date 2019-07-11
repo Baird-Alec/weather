@@ -5,13 +5,18 @@
         <title>Weather API Project</title>
         <meta name="Weather API" content="This is a project using a 3rd party Weather API.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
       Zip Code:
       <input type="text" id="zip">
       <button onclick="runAJAX()">Search</button>
-      <p id="temp"></p>
+      <div id=card>
+        <p id="temp"></p><br>
+        <p id="high"></p><br>
+        <p id="low"></p><br>
+        <p id="humid"></p><br>
+      </div>
       <script>
       
         function setWeather() {
@@ -56,7 +61,7 @@
  
           //humid
           var humid = weather.main.humidity + "&#37;";
-          var div = document.getElementById("humid").innerHTML = humid;
+          var div = document.getElementById("humid").innerHTML = humid; 
         }
   
         function convert(k) {
