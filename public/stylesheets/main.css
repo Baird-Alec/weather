@@ -1,8 +1,6 @@
       /* background */
    #card {
-    z-index: -100;
     background-color: green;
-    animation: spin 75s linear infinite;
  }
  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
