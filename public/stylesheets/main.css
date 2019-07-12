@@ -1,5 +1,5 @@
       /* background */
-   .card {
+   #card {
     z-index: -100;
     background-color: green;
     animation: spin 75s linear infinite;
