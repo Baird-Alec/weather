@@ -2,29 +2,10 @@
    #card {
     background-color: green;
  }
+ #test {
+    background-color: purple;
+ }
  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
- .cloud {
-    height: 200px;
-    width: 400px;
-    position: absolute;
-    z-index: -100;
- }
- .midClouds {
-    left: 550px;
-    animation-name: midclouds;
-    animation-duration: 10s;
-    animation-iteration-count: 1;
- }
- @keyframes midclouds {
-   0%   {left:550px;}
-   15%  {left:575px;}
-   30%  {left:600px;}
-   45%  {left:625px;}
-   60%  {left:600px;}
-   75%  {left:575px;}
-   100% {left:550px;}
- }
 
 
 /* form */
@@ -110,15 +91,4 @@
    80%  { transform: translate( 3px,  2px) rotate( 1deg); }
    90%  { transform: translate( 5px, -2px) rotate( -1deg); }
    100% { transform: translate(-1px,  1px) rotate(-2deg); }
- }
-
-
-/* elements */
- body {
-    background-image: linear-gradient(to bottom right, #7096EF, #545BE6, #6C51E6);
-    font-family: 'Raleway', sans-serif;
- }
-
- button {
-    font-family: 'Raleway', sans-serif;
  }
