@@ -1,10 +1,5 @@
       /* background */
-   #sun {
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    top: 25px;
-    left: 25px;
+   #card {
     z-index: -100;
     animation: spin 75s linear infinite;
  }
@@ -15,28 +10,6 @@
     width: 400px;
     position: absolute;
     z-index: -100;
- }
-
- .topClouds {
-    top: -50px;
- }
- .btmClouds {
-    top: 25px;
- }
- .leftClouds {
-    left: 225px;
-    animation-name: leftclouds;
-    animation-duration: 10s;
-    animation-iteration-count: 1;
- }
- @keyframes leftclouds {
-   0%   {left:225px;}
-   15%  {left:250px;}
-   30%  {left:275px;}
-   45%  {left:300px;}
-   60%  {left:275px;}
-   75%  {left:250px;}
-   100% {left:225px;}
  }
  .midClouds {
     left: 550px;
@@ -52,21 +25,6 @@
    60%  {left:600px;}
    75%  {left:575px;}
    100% {left:550px;}
- }
- .rtClouds {
-    left: 900px;
-    animation: rtclouds;
-    animation-duration: 10s;
-    animation-iteration-count: 1;
- }
- @keyframes rtclouds {
-   0%   {left:900px;}
-   15%  {left:925px;}
-   30%  {left:950px;}
-   45%  {left:975px;}
-   60%  {left:950px;}
-   75%  {left:925px;}
-   100% {left:900px;}
  }
 
 
