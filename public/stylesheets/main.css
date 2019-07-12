@@ -1,6 +1,7 @@
       /* background */
-   #card {
+   .card {
     z-index: -100;
+    background-color: green;
     animation: spin 75s linear infinite;
  }
  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
@@ -89,20 +90,6 @@
     overflow-y:auto;
     overflow-x:hidden;
  }
-
- .card {
-    height: 175px;
-    width: 175px;
-    text-align: center;
-    display: inline-block;
-    margin: 5px;
-    padding: 0;
-    background-color: whitesmoke;
-    font-size: 20px;
-    transition: height 1s, width 1s;
-    border-radius: 25px;
- }
-
  /* animation */
  .card:hover {
     height: 200px;
