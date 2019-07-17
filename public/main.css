@@ -1,0 +1,40 @@
+.card {
+    background-color: lightseagreen;
+    bottom:45%;
+    position:absolute;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .card:hover {
+    background-color: rgb(35, 168, 168);
+    font-family: cursive;
+  }
+  #but {
+    background-color: #FCFCFC;
+    width: 100px;
+    transition: width 2s;
+  
+  }
+  #but:hover {
+    animation-name: point;
+    animation-duration: 1ms;
+    animation-iteration-count: infinite;
+    width: 150px;
+  }
+  @keyframes spin {
+    100% { transform: rotate(360deg);}
+  }
+  @keyframes flyin {
+    0%{ left : 90%;}
+    100%{ left: 1%;}
+  }
+  @keyframes point {
+    0% { cursor: pointer; background-color: slategray;}
+    100% { cursor: pointer; background-color: lightslategray; }
+  }
+  @keyframes flyout {
+    0%{left: 1%; }
+    100%{left: 100%; }
+  }
+  body {
+    background-color:lightblue;
+  }
